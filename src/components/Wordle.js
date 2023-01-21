@@ -8,6 +8,8 @@ import Modal from './Modal';
 
 const Wordle = ({ solution }) => {
 
+    console.log(solution)
+
     const { currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys } = useWordle(solution);
     const [showModal, setShowModal] = useState(false)
 

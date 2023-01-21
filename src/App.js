@@ -1,25 +1,52 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Wordle from './components/Wordle';
 
 function App() {
 
-  const [solution, setSolution] = useState(null)
+  // const [solution, setSolution] = useState(null)
+  const solution2 = [
+    {"id": 1, "word": "nodir"},
+    {"id": 2, "word": "aziza"},
+    {"id": 3, "word": "laylo"},
+    {"id": 4, "word": "imron"},
+    {"id": 5, "word": "oysha"},
+    {"id": 6, "word": "osiyo"},
+    {"id": 7, "word": "ifora"},
+    {"id": 8, "word": "omina"},
+    {"id": 9, "word": "zahro"},
+    {"id": 10, "word": "saida"},
+    {"id": 11, "word": "umida"},
+    {"id": 12, "word": "iroda"},
+    {"id": 13, "word": "bilol"},
+    {"id": 14, "word": "islom"},
+    {"id": 15, "word": "yahyo"},
+    {"id": 16, "word": "bobur"},
+    {"id": 17, "word": "diyor"},
+    {"id": 18, "word": "ahmad"},
+    {"id": 19, "word": "temir"},
+    {"id": 20, "word": "jasur"}
+  ];
+  const randomSolution2 = solution2[Math.floor(Math.random() * solution2.length)].word
+  
+  
   
 
-  useEffect(() => {
-    fetch('http://localhost:3001/solutions')
-    .then( res => res.json())
-    .then( json => {
-      const randomSolution = json[Math.floor(Math.random() * json.length)]
-      setSolution(randomSolution.word)
-    })
-  }, [setSolution])
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/solutions')
+  //   .then( res => res.json())
+  //   .then( json => {
+  //     const randomSolution = json[Math.floor(Math.random() * json.length)]
+  //     setSolution(randomSolution.word)
+      
+  //   })
+  // }, [setSolution])
 
 
   return (
     <div className="App">
       <h1>Wordle (Jofay)</h1>
-      {solution && <Wordle solution={solution} /> }
+      {/* {solution && <Wordle solution={solution} /> } */}
+      <Wordle solution={randomSolution2} />
     </div>
   );
 }
